@@ -105,7 +105,7 @@ public class Typist
      */
     public int getBurnoutTurnsRemaining()
     {
-        return 0; // placeholder - replace with correct implementation
+        return this.turns;
     }
 
     /**
@@ -115,7 +115,7 @@ public class Typist
      */
     public boolean isBurntOut()
     {
-        return false; // placeholder - replace with correct implementation
+        return false;
     }
 
     /**
@@ -124,7 +124,7 @@ public class Typist
      * @return true if mistyped
      */
     public boolean hasMistyped(){
-        return false; // placeholder - replace with correct implementation
+        return false;
     }
     
 
