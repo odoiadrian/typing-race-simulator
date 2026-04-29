@@ -235,6 +235,15 @@ public class Typist
      */
     public void recoverFromBurnout()
     {
+        this.mistyped = false;
+        if (isBurntOut()){
+            this.turns--;
+            if (this.turns <= 0){
+                burntOut = false;
+                turns = 0;
+            }
+        }
+        return;
 
     }
 
