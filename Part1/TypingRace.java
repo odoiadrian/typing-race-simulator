@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 * @version 29/04/2026
  */
 public class TypingRace{
-    private int passageLength;   // Total characters in the passage to type
+    private final int passageLength;   // Total characters in the passage to type
     private Typist seat1Typist;
     private Typist seat2Typist;
     private Typist seat3Typist;
