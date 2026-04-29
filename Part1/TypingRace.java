@@ -28,8 +28,8 @@ public class TypingRace{
         
         TypingRace race = new TypingRace(40);
         race.addTypist(new Typist('A', "Adrian", 0.6), 1);
-        race.addTypist(new Typist('B', "Ben", 0.6), 2);
-        race.addTypist(new Typist('C', "Charlie", 0.6), 3);
+        race.addTypist(new Typist('B', "Ben", 0.5), 2);
+        race.addTypist(new Typist('C', "Charlie", 0.4), 3);
         race.startRace();
     }
 
