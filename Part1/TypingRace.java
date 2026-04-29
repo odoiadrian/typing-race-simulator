@@ -252,7 +252,7 @@ public class TypingRace{
      *
      * Examples:
      *   |          ⌨           | TURBOFINGERS (Accuracy: 0.85)
-     *   |    [zz]              | HUNT_N_PECK  (Accuracy: 0.40) BURNT OUT (2 turns)
+     *   |    [~]              | HUNT_N_PECK  (Accuracy: 0.40) BURNT OUT (2 turns)
      *
      * Note: Ty forgot to show when a typist has just mistyped. That would
      * be a nice improvement — perhaps a [<] marker after their symbol.
@@ -263,6 +263,10 @@ public class TypingRace{
     {
         int spacesBefore = theTypist.getProgress();
         int spacesAfter  = passageLength - theTypist.getProgress();
+        
+        if (spacesAfter < 0){
+            spacesAfter = 0;
+        }
 
         System.out.print('|');
         multiplePrint(' ', spacesBefore);
