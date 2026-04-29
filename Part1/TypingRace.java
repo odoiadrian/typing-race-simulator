@@ -157,8 +157,10 @@ public class TypingRace{
      *
      * @param theTypist the typist to advance
      */
-    private void advanceTypist(Typist theTypist)
-    {
+    private void advanceTypist(Typist theTypist){
+        if (theTypist == null){
+            return;
+        }
         if (theTypist.isBurntOut())
         {
             // Recovering from burnout — skip this turn
