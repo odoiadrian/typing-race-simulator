@@ -163,6 +163,7 @@ public class TypingRace{
         }
         if (theTypist.isBurntOut())
         {
+            theTypist.setMistyped(false);
             // Recovering from burnout — skip this turn
             theTypist.recoverFromBurnout();
             return;
@@ -172,12 +173,14 @@ public class TypingRace{
         if (Math.random() < theTypist.getAccuracy())
         {
             theTypist.typeCharacter();
+            return;
         }
 
         // Mistype check — the probability should reflect the typist's accuracy
         if (Math.random() < theTypist.getAccuracy() * MISTYPE_BASE_CHANCE)
         {
             theTypist.slideBack(SLIDE_BACK_AMOUNT);
+            return;
         }
 
         // Burnout check — pushing too hard increases burnout risk
@@ -185,6 +188,7 @@ public class TypingRace{
         if (Math.random() < 0.05 * theTypist.getAccuracy() * theTypist.getAccuracy())
         {
             theTypist.burnOut(BURNOUT_DURATION);
+            return;
         }
     }
 
