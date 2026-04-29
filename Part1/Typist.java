@@ -218,6 +218,13 @@ public class Typist
      */
     public void burnOut(int turns)
     {
+        this.mistyped = false;
+        //Validation to ensure the amount of turns is not negative
+        if (turns > 0){
+            this.burntOut = true;
+            this.turns = turns;
+        }
+        return;
 
     }
 
