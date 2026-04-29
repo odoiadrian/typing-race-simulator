@@ -39,6 +39,13 @@ public class Typist
      */
     public Typist(char typistSymbol, String typistName, double typistAccuracy)
     {
+        this.typistSymbol = typistSymbol;
+        this.typistName = typistName;
+        this.typistAccuracy = typistAccuracy;
+        this.prog = 0;
+        this.turns = 0;
+        this.burntOut = false;
+        this.mistyped = false;
 
     }
 
