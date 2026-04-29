@@ -188,6 +188,12 @@ public class TypingRace{
         if (Math.random() < 0.05 * theTypist.getAccuracy() * theTypist.getAccuracy())
         {
             theTypist.burnOut(BURNOUT_DURATION);
+            /* Slightly reduces accuracy for typists that burnout
+            Longer races cause higher accuracy drops
+            Higher accuracy typists get higher accuracy drops
+            Ensures the accuracy never goes below 0
+             */
+            theTypist.setAccuracy(theTypist.getAccuracy() - (theTypist.getAccuracy() * 0.05 * this.passageLength / 1000));
             return;
         }
     }
