@@ -149,7 +149,14 @@ public class TypingRace{
            winner.setAccuracy(winner.getAccuracy() + (0.08 * this.passageLength / 1000)*(1 - winner.getAccuracy()));
 
             System.out.println("And the winner is... " + winner.getName() + "!");
-            System.out.println("Final accuracy: " + winner.getAccuracy() + " (improved from " + winnerAccuracy + ")");
+            System.out.print("Final accuracy: " + winner.getAccuracy());
+            if (winnerAccuracy <= winner.getAccuracy()){
+                System.out.println(" (improved from " + winnerAccuracy + ")");
+            }
+            else{
+                System.out.println(" (regressed from " + winnerAccuracy + ")");
+            }
+            
         }
     }
 
