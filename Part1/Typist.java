@@ -74,7 +74,7 @@ public class Typist
      */
     public int getProgress()
     {
-        return 0; // placeholder - replace with correct implementation
+        return this.prog; 
     }
 
     /**
