@@ -132,6 +132,13 @@ public class TypingRace{
 
         // TODO (Task 2a): Print the winner's name here
         if (winner != null){
+            /*Increases accuracy of the winner.
+            Longer races give bigger boosts
+            More accurate typists get smaller boosts
+            Equation ensures that accuracy never goes above 1.0
+            */
+           winner.setAccuracy(winner.getAccuracy() + (0.08 * this.passageLength / 1000)*(1 - winner.getAccuracy()));
+
             System.out.println("And the winner is... " + winner.getName() + "!");
             System.out.println("Final accuracy: " + winner.getAccuracy() + " (improved from " + winnerAccuracy + ")");
         }
