@@ -172,6 +172,7 @@ public class TypingRace{
         // Attempt to type a character
         if (Math.random() < theTypist.getAccuracy())
         {
+            theTypist.setMistyped(false);
             theTypist.typeCharacter();
             return;
         }
@@ -179,6 +180,7 @@ public class TypingRace{
         // Mistype check — the probability should reflect the typist's accuracy
         if (Math.random() < theTypist.getAccuracy() * MISTYPE_BASE_CHANCE)
         {
+            theTypist.setMistyped(true);
             theTypist.slideBack(SLIDE_BACK_AMOUNT);
             return;
         }
@@ -187,6 +189,7 @@ public class TypingRace{
         // (probability scales with accuracy squared, capped at ~0.05)
         if (Math.random() < 0.05 * theTypist.getAccuracy() * theTypist.getAccuracy())
         {
+            theTypist.setMistyped(false);
             theTypist.burnOut(BURNOUT_DURATION);
             /* Slightly reduces accuracy for typists that burnout
             Longer races cause higher accuracy drops
