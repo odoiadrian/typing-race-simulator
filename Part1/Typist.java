@@ -167,6 +167,13 @@ public class Typist
      */
     public void slideBack(int amount)
     {
+        this.mistyped = true;
+        if (amount > 0){
+            this.prog -= amount;
+            if (this.prog < 0){
+                this.prog = 0;
+            }
+        }
 
     }
 
