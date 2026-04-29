@@ -209,6 +209,16 @@ public class Typist
         return;
 
     }
+
+    /**
+     * Sets the typist as mistyped or not mistyped.
+     *
+     * @param value whether the typis has mistyped or not
+     */
+    public void setMistyped(boolean value){
+        this.mistyped = value;
+        return;
+    }
     
     /**
      * Sets this typist into a burnout state for a given number of turns.
