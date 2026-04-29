@@ -24,12 +24,13 @@ public class TypingRace{
     private static final int    SLIDE_BACK_AMOUNT   = 2;
     private static final int    BURNOUT_DURATION     = 3;
 
-    public void main(){
-        addTypist(t1, 1);
-        addTypist(t2, 2);
-        addTypist(t3, 3);
-        startRace();
-        return;
+    public static void main(String args[]){
+        
+        TypingRace race = new TypingRace(40);
+        race.addTypist(new Typist('A', "Adrian", 0.6), 1);
+        race.addTypist(new Typist('B', "Ben", 0.6), 2);
+        race.addTypist(new Typist('C', "Charlie", 0.6), 3);
+        race.startRace();
     }
 
     /**
@@ -330,9 +331,3 @@ public class TypingRace{
         }
     }
 }
-
-TypingRace race = new TypingRace(40);
-Typist t1 = new Typist('A', "Adrian", 0.6);
-Typist t2 = new Typist('B', "Ben", 0.5);
-Typist t3 = new Typist('C', "Claire", 0.4);
-race.main();
