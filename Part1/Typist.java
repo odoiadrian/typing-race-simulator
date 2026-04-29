@@ -137,6 +137,11 @@ public class Typist
      */
     public void resetToStart()
     {
+        this.prog = 0;
+        this.burntOut = false;
+        this.turns = 0;
+        this.mistyped = false;
+        return;
 
     }
 
@@ -146,6 +151,11 @@ public class Typist
      */
     public void typeCharacter()
     {
+        this.mistyped = false;
+        if (!isBurntOut()){
+            this.prog++;
+        }
+        return;
 
     }
 
