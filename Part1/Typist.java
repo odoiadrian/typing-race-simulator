@@ -9,8 +9,7 @@
  * @author Adrian Odoi
  * @version 25/04/2026
  */
-public class Typist
-{
+public class Typist{
     // Fields of class Typist
     // Hint: you will need six fields. Think carefully about their types.
     // One of them tracks how far along the passage the typist has reached.
@@ -37,8 +36,7 @@ public class Typist
      * @param typistName    the name of the typist (e.g. "TURBOFINGERS")
      * @param typistAccuracy the typist's accuracy rating, between 0.0 and 1.0
      */
-    public Typist(char typistSymbol, String typistName, double typistAccuracy)
-    {
+    public Typist(char typistSymbol, String typistName, double typistAccuracy){
         this.typistSymbol = typistSymbol;
         this.typistName = typistName;
         this.typistAccuracy = typistAccuracy;
@@ -60,8 +58,7 @@ public class Typist
      *
      * @return accuracy as a double between 0.0 and 1.0
      */
-    public double getAccuracy()
-    {
+    public double getAccuracy(){
         return this.typistAccuracy; 
     }
 
@@ -72,8 +69,7 @@ public class Typist
      *
      * @return progress as a non-negative integer
      */
-    public int getProgress()
-    {
+    public int getProgress(){
         return this.prog; 
     }
 
@@ -82,8 +78,7 @@ public class Typist
      *
      * @return the typist's name as a String
      */
-    public String getName()
-    {
+    public String getName(){
         return this.typistName; 
     }
 
@@ -92,8 +87,7 @@ public class Typist
      *
      * @return the typist's symbol as a char
      */
-    public char getSymbol()
-    {
+    public char getSymbol(){
         return this.typistSymbol; 
     }
 
@@ -103,8 +97,7 @@ public class Typist
      *
      * @return burnout turns remaining as a non-negative integer
      */
-    public int getBurnoutTurnsRemaining()
-    {
+    public int getBurnoutTurnsRemaining(){
         return this.turns;
     }
 
@@ -113,8 +106,7 @@ public class Typist
      *
      * @return true if burnt out
      */
-    public boolean isBurntOut()
-    {
+    public boolean isBurntOut(){
         return this.isBurntOut();
     }
 
@@ -135,8 +127,7 @@ public class Typist
      * Resets the typist to their initial state, ready for a new race.
      * Progress returns to zero, burnout is cleared entirely.
      */
-    public void resetToStart()
-    {
+    public void resetToStart(){
         this.prog = 0;
         this.burntOut = false;
         this.turns = 0;
@@ -149,8 +140,7 @@ public class Typist
      * Advances the typist forward by one character along the passage.
      * Should only be called when the typist is not burnt out.
      */
-    public void typeCharacter()
-    {
+    public void typeCharacter(){
         this.mistyped = false;
         if (!isBurntOut()){
             this.prog++;
@@ -165,8 +155,7 @@ public class Typist
      *
      * @param amount the number of characters to slide back (must be positive)
      */
-    public void slideBack(int amount)
-    {
+    public void slideBack(int amount){
         this.mistyped = true;
         if (amount > 0){
             this.prog -= amount;
@@ -183,8 +172,7 @@ public class Typist
      *
      * @param newAccuracy the new accuracy rating
      */
-    public void setAccuracy(double newAccuracy)
-    {
+    public void setAccuracy(double newAccuracy){
         if (newAccuracy < 0.0){
             this.typistAccuracy = 0.0;
         }
@@ -203,8 +191,7 @@ public class Typist
      *
      * @param newSymbol the new symbol character
      */
-    public void setSymbol(char newSymbol)
-    {
+    public void setSymbol(char newSymbol){
         this.typistSymbol = newSymbol;
         return;
 
@@ -226,8 +213,7 @@ public class Typist
      *
      * @param turns the number of turns the burnout will last
      */
-    public void burnOut(int turns)
-    {
+    public void burnOut(int turns){
         this.mistyped = false;
         //Validation to ensure the amount of turns is not negative
         if (turns > 0){
@@ -243,8 +229,7 @@ public class Typist
      * When the counter reaches zero, the typist recovers automatically.
      * Has no effect if the typist is not currently burnt out.
      */
-    public void recoverFromBurnout()
-    {
+    public void recoverFromBurnout(){
         this.mistyped = false;
         if (isBurntOut()){
             this.turns--;
