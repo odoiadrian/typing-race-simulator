@@ -52,26 +52,8 @@ public class Typist
 
     // Methods of class Typist
 
-    /**
-     * Sets this typist into a burnout state for a given number of turns.
-     * A burnt-out typist cannot type until their burnout has worn off.
-     *
-     * @param turns the number of turns the burnout will last
-     */
-    public void burnOut(int turns)
-    {
+    //Accessor (getters)
 
-    }
-
-    /**
-     * Reduces the remaining burnout counter by one turn.
-     * When the counter reaches zero, the typist recovers automatically.
-     * Has no effect if the typist is not currently burnt out.
-     */
-    public void recoverFromBurnout()
-    {
-
-    }
 
     /**
      * Returns the typist's accuracy rating.
@@ -127,15 +109,6 @@ public class Typist
     }
 
     /**
-     * Resets the typist to their initial state, ready for a new race.
-     * Progress returns to zero, burnout is cleared entirely.
-     */
-    public void resetToStart()
-    {
-
-    }
-
-    /**
      * Returns true if this typist is currently burnt out, false otherwise.
      *
      * @return true if burnt out
@@ -143,6 +116,28 @@ public class Typist
     public boolean isBurntOut()
     {
         return false; // placeholder - replace with correct implementation
+    }
+
+    /**
+     * Returns true if this typist has just mistyped, false otherwise.
+     *
+     * @return true if mistyped
+     */
+    public boolean hasMistyped(){
+        return false; // placeholder - replace with correct implementation
+    }
+    
+
+    // Mutators (setters)
+
+
+    /**
+     * Resets the typist to their initial state, ready for a new race.
+     * Progress returns to zero, burnout is cleared entirely.
+     */
+    public void resetToStart()
+    {
+
     }
 
     /**
@@ -182,6 +177,27 @@ public class Typist
      * @param newSymbol the new symbol character
      */
     public void setSymbol(char newSymbol)
+    {
+
+    }
+    
+    /**
+     * Sets this typist into a burnout state for a given number of turns.
+     * A burnt-out typist cannot type until their burnout has worn off.
+     *
+     * @param turns the number of turns the burnout will last
+     */
+    public void burnOut(int turns)
+    {
+
+    }
+
+    /**
+     * Reduces the remaining burnout counter by one turn.
+     * When the counter reaches zero, the typist recovers automatically.
+     * Has no effect if the typist is not currently burnt out.
+     */
+    public void recoverFromBurnout()
     {
 
     }
