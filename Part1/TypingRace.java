@@ -1,5 +1,4 @@
 import java.util.concurrent.TimeUnit;
-import java.lang.Math;
 
 /**
  * A typing race simulation. Three typists race to complete a passage of text,
@@ -9,11 +8,11 @@ import java.lang.Math;
  * two-finger technique". He assured us the code was "basically done".
  * We have found evidence to the contrary.
  *
- * @author TyPosaurus
- * @version 0.7 (the other 0.3 is left as an exercise for the reader)
+ * @author Adrian Odoi  `
+
+* @version 29/04/2026
  */
-public class TypingRace
-{
+public class TypingRace{
     private int passageLength;   // Total characters in the passage to type
     private Typist seat1Typist;
     private Typist seat2Typist;
@@ -32,8 +31,7 @@ public class TypingRace
      *
      * @param passageLength the number of characters in the passage to type
      */
-    public TypingRace(int passageLength)
-    {
+    public TypingRace(int passageLength){
         this.passageLength = passageLength;
         seat1Typist = null;
         seat2Typist = null;
@@ -46,8 +44,8 @@ public class TypingRace
      * @param theTypist  the typist to seat
      * @param seatNumber the seat to place them in (1–3)
      */
-    public void addTypist(Typist theTypist, int seatNumber)
-    {
+    public void addTypist(Typist theTypist, int seatNumber){
+        
         if (seatNumber == 1)
         {
             seat1Typist = theTypist;
@@ -74,8 +72,12 @@ public class TypingRace
      * Note from Ty: "I didn't bother printing the winner at the end,
      * you can probably figure that out yourself."
      */
-    public void startRace()
-    {
+    public void startRace(){
+
+        if (seat1Typist == null || seat2Typist == null || seat3Typist == null){
+            return;
+        }
+        
         boolean finished = false;
 
         // Reset all typists to the start of the passage
