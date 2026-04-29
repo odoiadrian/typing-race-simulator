@@ -279,6 +279,10 @@ public class TypingRace{
             System.out.print('~');
             spacesAfter--; // symbol + ~ together take two characters
         }
+        else if (theTypist.hasMistyped()){
+            System.out.print('<');
+            spacesAfter--;
+        }
 
         multiplePrint(' ', spacesAfter);
         System.out.print('|');
@@ -291,8 +295,12 @@ public class TypingRace{
                 + " (Accuracy: " + theTypist.getAccuracy() + ")"
                 + " BURNT OUT (" + theTypist.getBurnoutTurnsRemaining() + " turns)");
         }
-        else
-        {
+        else if (theTypist.hasMistyped()){
+            System.out.print(theTypist.getName()
+                + " (Accuracy: " + theTypist.getAccuracy() + ")"
+                + " MISTYPED");
+        }
+        else{
             System.out.print(theTypist.getName()
                 + " (Accuracy: " + theTypist.getAccuracy() + ")");
         }
