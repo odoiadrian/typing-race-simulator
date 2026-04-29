@@ -124,7 +124,7 @@ public class Typist
      * @return true if mistyped
      */
     public boolean hasMistyped(){
-        return false;
+        return this.mistyped;    
     }
     
 
