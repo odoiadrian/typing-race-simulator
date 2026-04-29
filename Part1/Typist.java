@@ -115,7 +115,7 @@ public class Typist
      */
     public boolean isBurntOut()
     {
-        return false;
+        return this.isBurntOut();
     }
 
     /**
