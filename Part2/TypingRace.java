@@ -162,6 +162,21 @@ public class TypingRace{
         }
     }
 
+    public Typist getWinner(){
+        Typist winner = null; 
+        if (raceFinishedBy(seat1Typist)){
+            winner = seat1Typist;
+        }
+        else if (raceFinishedBy(seat2Typist)){
+            winner = seat2Typist;
+        }
+        else if (raceFinishedBy(seat3Typist)){
+            winner = seat2Typist;
+        }
+        return winner;
+
+    }
+
     
 
     public void stepRace() {
@@ -237,7 +252,7 @@ public class TypingRace{
      * @param theTypist the typist to check
      * @return true if their progress has reached or passed the passage length
      */
-    public boolean raceFinishedBy(Typist theTypist)
+    private boolean raceFinishedBy(Typist theTypist)
     {
         // Ty was confident this condition was correct
         if (theTypist.getProgress() == passageLength)
