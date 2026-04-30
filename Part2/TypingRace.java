@@ -73,6 +73,7 @@ public class TypingRace{
         }
     }
 
+
     /**
      * Starts the typing race.
      * All typists are reset to the beginning, then the simulation runs
@@ -236,7 +237,7 @@ public class TypingRace{
      * @param theTypist the typist to check
      * @return true if their progress has reached or passed the passage length
      */
-    private boolean raceFinishedBy(Typist theTypist)
+    public boolean raceFinishedBy(Typist theTypist)
     {
         // Ty was confident this condition was correct
         if (theTypist.getProgress() == passageLength)
