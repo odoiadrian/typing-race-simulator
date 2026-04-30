@@ -8,6 +8,7 @@ public class RaceGUI{
         display.setEditable(false);
 
         // Test Text
+        TypingRace race = newTypingRace(50);
         display.setText(race.getRaceState());
 
         frame.add(display);
