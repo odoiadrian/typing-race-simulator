@@ -351,6 +351,7 @@ public class TypingRaceCopy{
     }
 
     public String getLane(Typist T){
-        
+        StringBuilder lane = new StringBuilder();
+
     }
 }
