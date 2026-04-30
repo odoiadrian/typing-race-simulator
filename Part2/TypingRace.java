@@ -379,11 +379,13 @@ public class TypingRace{
 
         if (theTypist.isBurntOut()) {
             lane.append("~");
+            spacesAfter--;
         } else if (theTypist.hasMistyped()) {
             lane.append("<");
+            spacesAfter--;
         }
 
-        for (int i = 0; i < passageLength; i++) {
+        for (int i = 0; i < spacesAfter; i++) {
             lane.append(" ");
         }
 

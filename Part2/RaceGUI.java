@@ -2,7 +2,6 @@ import javax.swing.*;
 
 public class RaceGUI{
     public static void main(String[] args) {
-        System.out.print("HHH");
 
         JFrame frame = new JFrame("Typing Race Simulator");
 
@@ -14,6 +13,7 @@ public class RaceGUI{
         race.addTypist(new Typist('A', "Adrian", 0.6), 1);
         race.addTypist(new Typist('B', "Ben", 0.5), 2);
         race.addTypist(new Typist('C', "Charlie", 0.4), 3);
+        race.startRace();
         display.setText(race.getRaceState());
 
         frame.add(display);
