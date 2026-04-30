@@ -8,7 +8,7 @@ public class RaceGUI{
         display.setEditable(false);
 
         // Test Text
-        display.setText("Typing Race Loaded");
+        display.setText(race.getRaceState());
 
         frame.add(display);
 
