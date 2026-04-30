@@ -174,7 +174,20 @@ public class TypingRace{
             winner = seat2Typist;
         }
         return winner;
+    }
 
+    public double getWinnerInitialAccuracy(double initAcc1, double initAcc2, double initAcc3){
+        double winnerInitAcc = 0.0;
+        if (this.getWinner() == seat1Typist){
+            winnerInitAcc = initAcc1;
+        }
+        else if (this.getWinner() == seat2Typist){
+            winnerInitAcc = initAcc2;
+        }
+        else if (this.getWinner() == seat3Typist){
+            winnerInitAcc = initAcc3;
+        }
+        return winnerInitAcc;
     }
 
     
