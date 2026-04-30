@@ -349,4 +349,8 @@ public class TypingRaceCopy{
 
         return output.toString();
     }
+
+    public String getLane(Typist T){
+        
+    }
 }
