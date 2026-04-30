@@ -353,5 +353,32 @@ public class TypingRaceCopy{
     public String getLane(Typist t){
         StringBuilder lane = new StringBuilder();
 
+        int spacesBefore = t.getProgress();
+        int spacesAfter = passageLength - t.getProgress();
+
+        lane.append("|");
+
+        for (int i = 0; i < spacesBefore; i++) {
+            lane.append(" ");
+        }
+
+        lane.append(t.getSymbol());
+
+        if (t.isBurntOut()) {
+            lane.append("~");
+        } else if (t.hasMistyped()) {
+            lane.append("<");
+        }
+
+        for (int i = 0; i < spacesAfter; i++) {
+            lane.append(" ");
+        }
+
+        lane.append("| ");
+        lane.append(t.getName());
+        lane.append(" (").append(t.getAccuracy()).append(")");
+
+        return lane.toString();
+
     }
 }
