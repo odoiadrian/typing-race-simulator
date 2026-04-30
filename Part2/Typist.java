@@ -28,6 +28,7 @@ public class Typist{
     private boolean mistyped;
 
     private File typistStats;
+    private double WPM;
 
 
 
@@ -50,8 +51,11 @@ public class Typist{
         this.turns = 0;
         this.burntOut = false;
         this.mistyped = false;
+
         this.typistStats = new File(typistName + ".txt");
         typistStats.createNewFile();
+
+        this.WPM = 0.0;
 
     }
 

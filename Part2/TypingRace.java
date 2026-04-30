@@ -474,4 +474,5 @@ public class TypingRace{
     public double getPassageLength() {
         return this.passageLength;
     }
+
 }

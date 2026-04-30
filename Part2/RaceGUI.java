@@ -1,8 +1,9 @@
 import javax.swing.*; 
 import java.awt.*;
+import java.io.IOException;
 
 public class RaceGUI{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         JFrame frame = new JFrame("Typing Race Simulator");
 
