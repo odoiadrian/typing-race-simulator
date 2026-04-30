@@ -337,4 +337,7 @@ public class TypingRaceCopy{
             i = i + 1;
         }
     }
+
+    public String getRaceState(){
+    }
 }
