@@ -1,4 +1,5 @@
 import javax.swing.*; 
+
 public class RaceGUI{
     public static void main(String[] args) {
 
@@ -8,7 +9,10 @@ public class RaceGUI{
         display.setEditable(false);
 
         // Test Text
-        TypingRace race = newTypingRace(50);
+        TypingRace race = new TypingRace(50);
+        race.addTypist(new Typist('A', "Adrian", 0.6), 1);
+        race.addTypist(new Typist('B', "Ben", 0.5), 2);
+        race.addTypist(new Typist('C', "Charlie", 0.4), 3);
         display.setText(race.getRaceState());
 
         frame.add(display);
