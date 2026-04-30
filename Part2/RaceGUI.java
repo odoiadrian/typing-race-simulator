@@ -6,5 +6,7 @@ public class RaceGUI{
 
         JTextArea display = new JTextArea();
         display.setEditable(false);
+
+        frame.add(display);
     }
 }
