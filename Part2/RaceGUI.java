@@ -1,4 +1,5 @@
 import javax.swing.*; 
+import java.awt.*;
 
 public class RaceGUI{
     public static void main(String[] args) {
@@ -17,6 +18,8 @@ public class RaceGUI{
         race.addTypist(new Typist('C', "Charlie", 0.4), 3);
         race.startRace();
         display.setText(race.getRaceState());
+
+        
 
         frame.add(display);
 
