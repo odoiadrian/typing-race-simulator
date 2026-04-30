@@ -8,6 +8,8 @@ public class RaceGUI{
         JTextArea display = new JTextArea();
         display.setEditable(false);
 
+        JButton startButton = new JButton("Start Race");
+
         // Test Text
         TypingRace race = new TypingRace(50);
         race.addTypist(new Typist('A', "Adrian", 0.6), 1);
