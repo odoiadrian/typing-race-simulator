@@ -19,6 +19,7 @@ public class Typist{
     private char typistSymbol;
     private String typistName;
     private double typistAccuracy;
+    private double typistInitialAccuracy;
     private int prog;
     private int turns;
     private boolean burntOut;
@@ -40,6 +41,7 @@ public class Typist{
         this.typistSymbol = typistSymbol;
         this.typistName = typistName;
         this.typistAccuracy = typistAccuracy;
+        this.typistInitialAccuracy = typistAccuracy;
         this.prog = 0;
         this.turns = 0;
         this.burntOut = false;
@@ -60,6 +62,10 @@ public class Typist{
      */
     public double getAccuracy(){
         return this.typistAccuracy; 
+    }
+
+    public double getInitialAccuracy(){
+        return this.typistInitialAccuracy;
     }
 
     /**

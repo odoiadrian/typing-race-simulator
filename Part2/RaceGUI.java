@@ -12,6 +12,7 @@ public class RaceGUI{
         JButton startButton = new JButton("Start Race");
 
 
+
         TypingRace race = new TypingRace(50);
         Typist t1 = new Typist('A', "Adrian", 0.6);
         Typist t2 = new Typist('B', "Ben", 0.5);
@@ -21,6 +22,8 @@ public class RaceGUI{
         race.addTypist(t3, 3);
 
 
+
+
         display.setText(race.getRaceState());
 
         frame.setLayout(new BorderLayout());
@@ -28,6 +31,8 @@ public class RaceGUI{
         frame.add(startButton, BorderLayout.SOUTH);
 
         startButton.addActionListener(e -> {
+
+
             Timer timer = new Timer(200, null);
             timer.addActionListener(ev -> {
                 race.stepRace();
@@ -35,7 +40,6 @@ public class RaceGUI{
 
                 if (race.isFinished()) {
                     timer.stop();
-                    display.append("\n\nRace Finished!");
                 }
             });
             timer.start();

@@ -24,6 +24,11 @@ public class TypingRace{
     private static final int    SLIDE_BACK_AMOUNT   = 2;
     private static final int    BURNOUT_DURATION     = 3;
 
+    //Typist initial accuracies
+    private double initAcc1;
+    private double initAcc2;
+    private double initAcc3;
+
     public static void main(String args[]){
         
         TypingRace race = new TypingRace(40);
@@ -171,24 +176,11 @@ public class TypingRace{
             winner = seat2Typist;
         }
         else if (raceFinishedBy(seat3Typist)){
-            winner = seat2Typist;
+            winner = seat3Typist;
         }
         return winner;
     }
 
-    public double getWinnerInitialAccuracy(double initAcc1, double initAcc2, double initAcc3){
-        double winnerInitAcc = 0.0;
-        if (this.getWinner() == seat1Typist){
-            winnerInitAcc = initAcc1;
-        }
-        else if (this.getWinner() == seat2Typist){
-            winnerInitAcc = initAcc2;
-        }
-        else if (this.getWinner() == seat3Typist){
-            winnerInitAcc = initAcc3;
-        }
-        return winnerInitAcc;
-    }
 
     
 
@@ -397,6 +389,7 @@ public class TypingRace{
             output.append("=");
         }
         output.append("\n\n");
+        output.append(endMessage());
 
         return output.toString();
     }
@@ -446,7 +439,38 @@ public class TypingRace{
         }
 
 
+
+
         return lane.toString();
 
+    }
+
+    public String endMessage (){
+        String finalMessage = "";
+        if (this.isFinished()){
+            Typist winner = this.getWinner();
+            /*Increases accuracy of the winner.
+            Longer races give bigger boosts
+            More accurate typists get smaller boosts
+            Equation ensures that accuracy never goes above 1.0
+            */
+           winner.setAccuracy(winner.getAccuracy() + (0.08 * this.passageLength / 1000)*(1 - winner.getAccuracy()));
+
+            finalMessage += ("And the winner is... " + winner.getName() + "!\n");
+            finalMessage += ("Final accuracy: " + winner.getAccuracy());
+            if (winner.getInitialAccuracy() <= winner.getAccuracy()){
+                finalMessage += (" (improved from " + winner.getInitialAccuracy() + ")");
+            }
+            else{
+                finalMessage += (" (regressed from " + winner.getInitialAccuracy() + ")");
+            }
+
+        }
+        return finalMessage;
+
+    }
+
+    public double getPassageLength() {
+        return this.passageLength;
     }
 }
