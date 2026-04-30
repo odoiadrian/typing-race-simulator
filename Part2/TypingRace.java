@@ -385,7 +385,7 @@ public class TypingRace{
             spacesAfter--;
         }
 
-        for (int i = 0; i < spacesAfter; i++) {
+        for (int i = 0; i < (spacesAfter + theTypist.getProgress()); i++) {
             lane.append(" ");
         }
 
