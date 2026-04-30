@@ -169,6 +169,10 @@ public class TypingRace{
         advanceTypist(seat3Typist);
     }
 
+    public boolean isFinished() {
+        return (raceFinishedBy(seat1Typist) || raceFinishedBy(seat2Typist) || raceFinishedBy(seat3Typist));
+    }
+
     /**
      * Simulates one turn for a typist.
      *
