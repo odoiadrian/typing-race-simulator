@@ -2,6 +2,7 @@ import javax.swing.*;
 
 public class RaceGUI{
     public static void main(String[] args) {
+        System.out.print("HHH");
 
         JFrame frame = new JFrame("Typing Race Simulator");
 
