@@ -340,11 +340,13 @@ public class TypingRaceCopy{
 
     public String getRaceState(){
         StringBuilder output = new StringBuilder();
-        
+
         output.append("TYPING RACE\n\n");
 
         output.append(getLane(seat1Typist)).append("\n\n");
         output.append(getLane(seat2Typist)).append("\n\n");
         output.append(getLane(seat3Typist)).append("\n\n");
+
+        return output.toString();
     }
 }
