@@ -161,6 +161,14 @@ public class TypingRace{
         }
     }
 
+    
+
+    public void stepRace() {
+        advanceTypist(seat1Typist);
+        advanceTypist(seat2Typist);
+        advanceTypist(seat3Typist);
+    }
+
     /**
      * Simulates one turn for a typist.
      *
