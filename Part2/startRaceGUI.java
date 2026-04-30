@@ -1,5 +1,5 @@
 import javax.swing.*; 
-public class RaceGUI{
+public class startRaceGUI{
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Typing Race Simulator");
