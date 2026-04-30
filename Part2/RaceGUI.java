@@ -8,5 +8,9 @@ public class RaceGUI{
         display.setEditable(false);
 
         frame.add(display);
+
+        frame.setSize(800, 400);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
