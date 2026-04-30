@@ -30,6 +30,7 @@ public class Typist{
     private File typistStats;
     private double WPM;
     private double accuracyPercentage;
+    private int characterTyped;
 
 
 
@@ -58,6 +59,7 @@ public class Typist{
 
         this.WPM = 0.0;
         this.accuracyPercentage = 0.0;
+        this.characterTyped = 0;
 
     }
 
@@ -82,6 +84,10 @@ public class Typist{
 
     public double getAccuracyPercentage(){
         return this.accuracyPercentage;
+    }
+
+    public int getCharactersTyped(){
+        return this.characterTyped;
     }
 
     /**
@@ -160,6 +166,10 @@ public class Typist{
 
     public void setAccuracyPercentage(double newPercentage){
         this.accuracyPercentage = newPercentage;
+    }
+
+    public void incrementCharactersTyped(){
+        this.characterTyped++;
     }
 
     /**
