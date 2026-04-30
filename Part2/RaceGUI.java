@@ -3,7 +3,11 @@ import java.awt.*;
 import java.io.IOException;
 
 public class RaceGUI{
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException{
+        startRaceGUI();
+    }
+
+    public static void startRaceGUI() throws IOException {
 
         JFrame frame = new JFrame("Typing Race Simulator");
 
@@ -55,6 +59,7 @@ public class RaceGUI{
         frame.setSize(800, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+
     }
     
 }
