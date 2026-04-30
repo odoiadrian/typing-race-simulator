@@ -36,11 +36,15 @@ public class RaceGUI{
 
             Timer timer = new Timer(200, null);
             timer.addActionListener(ev -> {
-                race.stepRace();
-                display.setText(race.getRaceState());
-
-                if (race.isFinished()) {
-                    timer.stop();
+                try {
+                    race.stepRace();
+                    display.setText(race.getRaceState());
+                    
+                    if (race.isFinished()) {
+                        timer.stop();
+                    }
+                } catch (IOException ex) {
+                    System.getLogger(RaceGUI.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
                 }
             });
             timer.start();

@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -88,7 +89,7 @@ public class TypingRace{
      * Note from Ty: "I didn't bother printing the winner at the end,
      * you can probably figure that out yourself."
      */
-    public void startRace(){
+    public void startRace() throws IOException{
 
         if (seat1Typist == null || seat2Typist == null || seat3Typist == null){
             return;
@@ -168,7 +169,7 @@ public class TypingRace{
         }
     }
 
-    public Typist getWinner(){
+    public Typist getWinner() throws IOException{
         Typist winner = null; 
         if (raceFinishedBy(seat1Typist)){
             winner = seat1Typist;
@@ -191,7 +192,7 @@ public class TypingRace{
         advanceTypist(seat3Typist);
     }
 
-    public boolean isFinished() {
+    public boolean isFinished() throws IOException {
         return (raceFinishedBy(seat1Typist) || raceFinishedBy(seat2Typist) || raceFinishedBy(seat3Typist));
     }
 
@@ -261,14 +262,26 @@ public class TypingRace{
      * @param theTypist the typist to check
      * @return true if their progress has reached or passed the passage length
      */
-    private boolean raceFinishedBy(Typist theTypist)
+    private boolean raceFinishedBy(Typist theTypist) throws IOException
     {
         // Ty was confident this condition was correct
         if (theTypist.getProgress() == passageLength)
         {
             seat1Typist.setAccuracyPercentage(seat1Typist.getAccuracyPercentage()/seat1Typist.getCharactersTyped());
+            FileWriter writer1 = new FileWriter(seat1Typist + ".txt");
+            writer1.write("Accuracy Percentage: " + seat1Typist.getAccuracyPercentage());
+            writer1.close();
+
             seat2Typist.setAccuracyPercentage(seat2Typist.getAccuracyPercentage()/seat2Typist.getCharactersTyped());
-            seat3Typist.setAccuracyPercentage(seat3Typist.getAccuracyPercentage()/seat3Typist.getCharactersTyped());
+            FileWriter writer2 = new FileWriter(seat2Typist + ".txt");
+            writer2.write("Accuracy Percentage: " + seat2Typist.getAccuracyPercentage());
+            writer2.close();
+
+            seat3Typist.setAccuracyPercentage(seat3Typist.getAccuracyPercentage()/seat3Typist.getCharactersTyped());FileWriter writer = new FileWriter(seat1Typist + ".txt");
+            FileWriter writer3 = new FileWriter(seat3Typist + ".txt");
+            writer3.write("Accuracy Percentage: " + seat3Typist.getAccuracyPercentage());
+            writer3.close();
+
             return true;
         }
         else
@@ -379,7 +392,7 @@ public class TypingRace{
         }
     }
 
-    public String getRaceState(){
+    public String getRaceState() throws IOException{
         StringBuilder output = new StringBuilder();
 
         output.append("TYPING RACE - passage length: ").append(this.passageLength).append(" chars\n\n");
@@ -452,7 +465,7 @@ public class TypingRace{
 
     }
 
-    public String endMessage (){
+    public String endMessage () throws IOException{
         String finalMessage = "";
         if (this.isFinished()){
             Typist winner = this.getWinner();
