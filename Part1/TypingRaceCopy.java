@@ -350,7 +350,7 @@ public class TypingRaceCopy{
         return output.toString();
     }
 
-    public String getLane(Typist T){
+    public String getLane(Typist t){
         StringBuilder lane = new StringBuilder();
 
     }
