@@ -267,19 +267,19 @@ public class TypingRace{
         // Ty was confident this condition was correct
         if (theTypist.getProgress() == passageLength)
         {
-            seat1Typist.setAccuracyPercentage(seat1Typist.getAccuracyPercentage()/seat1Typist.getCharactersTyped());
-            FileWriter writer1 = new FileWriter(seat1Typist + ".txt");
-            writer1.write("Accuracy Percentage: " + seat1Typist.getAccuracyPercentage());
+            seat1Typist.setAccuracyPercentage(100 * seat1Typist.getAccuracyPercentage()/seat1Typist.getCharactersTyped());
+            FileWriter writer1 = new FileWriter(seat1Typist.getName() + ".txt");
+            writer1.write("Accuracy Percentage: " + seat1Typist.getAccuracyPercentage() + "%");
             writer1.close();
 
-            seat2Typist.setAccuracyPercentage(seat2Typist.getAccuracyPercentage()/seat2Typist.getCharactersTyped());
-            FileWriter writer2 = new FileWriter(seat2Typist + ".txt");
-            writer2.write("Accuracy Percentage: " + seat2Typist.getAccuracyPercentage());
+            seat2Typist.setAccuracyPercentage(100 * seat2Typist.getAccuracyPercentage()/seat2Typist.getCharactersTyped());
+            FileWriter writer2 = new FileWriter(seat2Typist.getName() + ".txt");
+            writer2.write("Accuracy Percentage: " + seat2Typist.getAccuracyPercentage() + "%");
             writer2.close();
 
-            seat3Typist.setAccuracyPercentage(seat3Typist.getAccuracyPercentage()/seat3Typist.getCharactersTyped());FileWriter writer = new FileWriter(seat1Typist + ".txt");
-            FileWriter writer3 = new FileWriter(seat3Typist + ".txt");
-            writer3.write("Accuracy Percentage: " + seat3Typist.getAccuracyPercentage());
+            seat3Typist.setAccuracyPercentage(100 *seat3Typist.getAccuracyPercentage()/seat3Typist.getCharactersTyped());FileWriter writer = new FileWriter(seat1Typist.getName() + ".txt");
+            FileWriter writer3 = new FileWriter(seat3Typist.getName() + ".txt");
+            writer3.write("Accuracy Percentage: " + seat3Typist.getAccuracyPercentage() + "%");
             writer3.close();
 
             return true;
