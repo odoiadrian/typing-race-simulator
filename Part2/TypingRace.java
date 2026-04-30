@@ -343,7 +343,7 @@ public class TypingRace{
         StringBuilder output = new StringBuilder();
 
         output.append("TYPING RACE - passage length: ").append(this.passageLength).append(" chars\n\n");
-        for (int i = 0; i < this.passageLength; i++){
+        for (int i = 0; i < (this.passageLength/2); i++){
             output.append("=");
         }
         output.append("\n\n");
@@ -352,7 +352,7 @@ public class TypingRace{
         output.append(getLane(seat2Typist)).append("\n\n");
         output.append(getLane(seat3Typist)).append("\n\n");
 
-        for (int i = 0; i < this.passageLength; i++){
+        for (int i = 0; i < (this.passageLength)/2; i++){
             output.append("=");
         }
         output.append("\n\n");
