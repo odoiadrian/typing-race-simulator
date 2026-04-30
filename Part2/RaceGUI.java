@@ -18,7 +18,10 @@ public class RaceGUI{
         race.addTypist(new Typist('C', "Charlie", 0.4), 3);
         race.startRace();
         display.setText(race.getRaceState());
-
+        
+        frame.setLayout(new BorderLayout());
+        frame.add(display, BorderLayout.CENTER);
+        frame.add(startButton, BorderLayout.SOUTH);
         
 
         frame.add(display);
