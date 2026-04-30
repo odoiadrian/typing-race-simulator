@@ -22,4 +22,8 @@ public class RaceGUI{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
+
+    public void display(){
+        
+    }
 }
