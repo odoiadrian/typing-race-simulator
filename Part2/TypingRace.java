@@ -404,6 +404,8 @@ public class TypingRace{
             lane.append(" (Accuracy: ").append(theTypist.getAccuracy()).append(")");
         }
 
+        System.out.println(spacesAfter + spacesBefore + (spacesAfter + spacesBefore) + "");
+
         return lane.toString();
 
     }
