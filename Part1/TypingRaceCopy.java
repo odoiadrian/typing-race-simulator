@@ -339,5 +339,7 @@ public class TypingRaceCopy{
     }
 
     public String getRaceState(){
+        StringBuilder output = new StringBuilder();
+
     }
 }
