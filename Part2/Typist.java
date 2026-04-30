@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.IOException;
 /**
  * Write a description of class Typist here.
  *
@@ -25,6 +27,8 @@ public class Typist{
     private boolean burntOut;
     private boolean mistyped;
 
+    private File typistStats;
+
 
 
 
@@ -37,7 +41,7 @@ public class Typist{
      * @param typistName    the name of the typist (e.g. "TURBOFINGERS")
      * @param typistAccuracy the typist's accuracy rating, between 0.0 and 1.0
      */
-    public Typist(char typistSymbol, String typistName, double typistAccuracy){
+    public Typist(char typistSymbol, String typistName, double typistAccuracy) throws IOException{
         this.typistSymbol = typistSymbol;
         this.typistName = typistName;
         this.typistAccuracy = typistAccuracy;
@@ -46,6 +50,8 @@ public class Typist{
         this.turns = 0;
         this.burntOut = false;
         this.mistyped = false;
+        this.typistStats = new File(typistName + ".txt");
+        typistStats.createNewFile();
 
     }
 

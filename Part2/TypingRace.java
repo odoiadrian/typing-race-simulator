@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -29,7 +30,7 @@ public class TypingRace{
     private double initAcc2;
     private double initAcc3;
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws IOException{
         
         TypingRace race = new TypingRace(40);
         race.addTypist(new Typist('A', "Adrian", 0.6), 1);
