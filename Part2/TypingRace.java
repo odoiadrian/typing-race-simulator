@@ -225,6 +225,8 @@ public class TypingRace{
         {
             theTypist.setMistyped(false);
             theTypist.typeCharacter();
+            theTypist.setAccuracyPercentage(theTypist.getAccuracyPercentage() + 1);
+            theTypist.incrementCharactersTyped();
             return;
         }
 
@@ -233,6 +235,7 @@ public class TypingRace{
         {
             theTypist.setMistyped(true);
             theTypist.slideBack(SLIDE_BACK_AMOUNT);
+            theTypist.setAccuracyPercentage(theTypist.getAccuracyPercentage() - 1);
             return;
         }
 
@@ -263,6 +266,9 @@ public class TypingRace{
         // Ty was confident this condition was correct
         if (theTypist.getProgress() == passageLength)
         {
+            seat1Typist.setAccuracyPercentage(seat1Typist.getAccuracyPercentage()/seat1Typist.getCharactersTyped());
+            seat2Typist.setAccuracyPercentage(seat2Typist.getAccuracyPercentage()/seat2Typist.getCharactersTyped());
+            seat3Typist.setAccuracyPercentage(seat3Typist.getAccuracyPercentage()/seat3Typist.getCharactersTyped());
             return true;
         }
         else
