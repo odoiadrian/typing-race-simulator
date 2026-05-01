@@ -125,6 +125,9 @@ public class Typist{
      * @return progress as a non-negative integer
      */
     public int getProgress(){
+        if (prog < 0){
+            return 0;
+        }
         return this.prog; 
     }
 
