@@ -1,5 +1,3 @@
-import java.io.File;
-import java.io.IOException;
 /**
  * Write a description of class Typist here.
  *
@@ -21,16 +19,10 @@ public class Typist{
     private char typistSymbol;
     private String typistName;
     private double typistAccuracy;
-    private double typistInitialAccuracy;
     private int prog;
     private int turns;
     private boolean burntOut;
     private boolean mistyped;
-
-    private File typistStats;
-    private double WPM;
-    private double accuracyPercentage;
-    private int characterTyped;
 
 
 
@@ -44,22 +36,14 @@ public class Typist{
      * @param typistName    the name of the typist (e.g. "TURBOFINGERS")
      * @param typistAccuracy the typist's accuracy rating, between 0.0 and 1.0
      */
-    public Typist(char typistSymbol, String typistName, double typistAccuracy) throws IOException{
+    public Typist(char typistSymbol, String typistName, double typistAccuracy){
         this.typistSymbol = typistSymbol;
         this.typistName = typistName;
         this.typistAccuracy = typistAccuracy;
-        this.typistInitialAccuracy = typistAccuracy;
         this.prog = 0;
         this.turns = 0;
         this.burntOut = false;
         this.mistyped = false;
-
-        this.typistStats = new File(typistName + ".txt");
-        typistStats.createNewFile();
-
-        this.WPM = 0.0;
-        this.accuracyPercentage = 0.0;
-        this.characterTyped = 0;
 
     }
 
@@ -75,46 +59,7 @@ public class Typist{
      * @return accuracy as a double between 0.0 and 1.0
      */
     public double getAccuracy(){
-        if (this.typistAccuracy < 0){
-            return 0;
-        }
-        if (this.typistAccuracy > 1){
-            return 1;
-        }
         return this.typistAccuracy; 
-    }
-
-    /**
-     * Returns the typist's initial accuracy rating.
-     *
-     * @return accuracy as a initial double between 0.0 and 1.0
-     */
-    public double getInitialAccuracy(){
-        if (this.typistInitialAccuracy < 0){
-            return 0;
-        }
-        if (this.typistInitialAccuracy > 1){
-            return 1;
-        }
-        return this.typistInitialAccuracy;
-    }
-
-    /**
-     * Returns the typist's accuracy percentage.
-     *
-     * @return accuracy percentage
-     */
-    public double getAccuracyPercentage(){
-        return this.accuracyPercentage;
-    }
-
-    /**
-     * Returns the amount of characters the typist has typed.
-     *
-     * @return amount of characters typed
-     */
-    public int getCharactersTyped(){
-        return this.characterTyped;
     }
 
     /**
@@ -125,9 +70,6 @@ public class Typist{
      * @return progress as a non-negative integer
      */
     public int getProgress(){
-        if (prog < 0){
-            return 0;
-        }
         return this.prog; 
     }
 
@@ -156,8 +98,6 @@ public class Typist{
      * @return burnout turns remaining as a non-negative integer
      */
     public int getBurnoutTurnsRemaining(){
-        if (this.turns < 0){
-            return 0;
         return this.turns;
     }
 
@@ -194,14 +134,6 @@ public class Typist{
         this.mistyped = false;
         return;
 
-    }
-
-    public void setAccuracyPercentage(double newPercentage){
-        this.accuracyPercentage = newPercentage;
-    }
-
-    public void incrementCharactersTyped(){
-        this.characterTyped++;
     }
 
     /**
