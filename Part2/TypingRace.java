@@ -169,6 +169,9 @@ public class TypingRace{
         }
     }
 
+    /**Method to return the winner of the race
+     * @return winner of the race
+    **/
     public Typist getWinner() throws IOException{
         Typist winner = null; 
         if (raceFinishedBy(seat1Typist)){
@@ -185,13 +188,15 @@ public class TypingRace{
 
 
     
-
+    /* Method to advance the race by one step for all typists */
     public void stepRace() {
         advanceTypist(seat1Typist);
         advanceTypist(seat2Typist);
         advanceTypist(seat3Typist);
     }
 
+    /* Method to return whether the race is finished
+     * @return if the race has finished or not */
     public boolean isFinished() throws IOException {
         return (raceFinishedBy(seat1Typist) || raceFinishedBy(seat2Typist) || raceFinishedBy(seat3Typist));
     }
@@ -392,6 +397,12 @@ public class TypingRace{
         }
     }
 
+    /**
+     * Returns a string of the current state of the race
+     * This includes positions of typists, their adjusted accuracies and whether they are burnt out or have mistyped
+     * @return Current state of the race
+     */
+
     public String getRaceState() throws IOException{
         StringBuilder output = new StringBuilder();
 
@@ -414,6 +425,11 @@ public class TypingRace{
         return output.toString();
     }
 
+    /**
+     * Returns the lane of each typist
+     * This includes their position, accuracy, name and whether they have mistyped or burnt out
+     * @return the typist's lane
+     */
     private String getLane(Typist theTypist){
         if (theTypist == null){
             return "| Empty Lane |";
@@ -465,6 +481,12 @@ public class TypingRace{
 
     }
 
+    /**
+     * Returns an appropiate end message for the end of the race
+     * This includes who won and their updated accuracy
+     * @return race's end message
+     */
+
     public String endMessage () throws IOException{
         String finalMessage = "";
         if (this.isFinished()){
@@ -490,6 +512,10 @@ public class TypingRace{
 
     }
 
+    /**
+     * Returns the length of the passage
+     * @return passageLength
+     */
     public double getPassageLength() {
         return this.passageLength;
     }

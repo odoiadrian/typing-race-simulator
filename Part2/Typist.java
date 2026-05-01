@@ -78,14 +78,29 @@ public class Typist{
         return this.typistAccuracy; 
     }
 
+    /**
+     * Returns the typist's initial accuracy rating.
+     *
+     * @return accuracy as a initial double between 0.0 and 1.0
+     */
     public double getInitialAccuracy(){
         return this.typistInitialAccuracy;
     }
 
+    /**
+     * Returns the typist's accuracy percentage.
+     *
+     * @return accuracy percentage
+     */
     public double getAccuracyPercentage(){
         return this.accuracyPercentage;
     }
 
+    /**
+     * Returns the amount of characters the typist has typed.
+     *
+     * @return amount of characters typed
+     */
     public int getCharactersTyped(){
         return this.characterTyped;
     }
