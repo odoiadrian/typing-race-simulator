@@ -156,6 +156,8 @@ public class Typist{
      * @return burnout turns remaining as a non-negative integer
      */
     public int getBurnoutTurnsRemaining(){
+        if (this.turns < 0){
+            return 0;
         return this.turns;
     }
 
