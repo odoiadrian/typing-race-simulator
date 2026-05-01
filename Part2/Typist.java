@@ -90,6 +90,12 @@ public class Typist{
      * @return accuracy as a initial double between 0.0 and 1.0
      */
     public double getInitialAccuracy(){
+        if (this.typistInitialAccuracy < 0){
+            return 0;
+        }
+        if (this.typistInitialAccuracy > 1){
+            return 1;
+        }
         return this.typistInitialAccuracy;
     }
 
